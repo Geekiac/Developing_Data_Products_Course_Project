@@ -1,0 +1,47 @@
+Random walks simulations in 1D and 2D
+========================================================
+author: Steven Smith
+date: 10 July 2016
+autosize: true
+
+Introduction
+========================================================
+
+This presentation will describe the features of my Developing Data Products Shiny App.
+
+- Brief Description of the application
+ - Control random walk parameters
+ - Display a random walk in 1 and 2-dimensions
+ - Get summary information on the y or x and y values used to generate the plots
+ 
+Random walk in 1-dimension, step-size=2, total-steps=1000
+========================================================
+```{r, fig.height=4}
+y_1d <- round(c(0, runif(999, -2, 2)))
+for(i in 2:1000) y_1d[i] <- y_1d[i] + y_1d[i-1]
+plot(y_1d, type="l", col="blue")
+abline(h=0, col="red")
+```
+
+
+Interface to the application
+========================================================
+- 2 sliders for input
+  - Step Size
+  - Number Of Steps
+- 4 tabs
+  - Plot of the random walk in 1-dimension
+  - Summary of the random walk in 1-dimension
+  - Plot of the random walk in 2-dimensions
+  - Summary of the random walk in 2-dimensions
+- Descriptive text on the application and how to use it
+
+
+Where to find the application
+========================================================
+
+The application can be found on the shinyapps.io portal.
+
+https://geekiac.shinyapps.io/Developing_Data_Products_Project/
+
+I hope you enjoy it!
